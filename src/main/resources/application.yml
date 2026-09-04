@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: printer_agent
+
+server:
+  port: 18080
