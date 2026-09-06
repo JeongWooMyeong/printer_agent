@@ -2,6 +2,7 @@ package org.example.printer_agent.Controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.printer_agent.dto.PrintRequest;
+import org.example.printer_agent.dto.PrinterSettings;
 import org.example.printer_agent.service.PdfPrintService;
 import org.example.printer_agent.service.PrinterService;
 import org.springframework.web.bind.annotation.*;
@@ -44,9 +45,22 @@ public class PrinterController {
 
         pdfPrintService.print(
                 request.printerName(),
-                request.filePath()
+                request.filePath(),
+                request.paperSize(),
+                request.orientation(),
+                request.color(),
+                request.duplex(),
+                request.copies()
         );
 
         return "출력 완료";
     }
+
+    @GetMapping("/{printerName}/settings")
+    public PrinterSettings getPrinterSettings(
+            @PathVariable String printerName
+    ) {
+        return printerService.getPrinterSettings(printerName);
+    }
+
 }
