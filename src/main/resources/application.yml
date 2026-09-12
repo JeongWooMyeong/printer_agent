@@ -7,7 +7,7 @@ server:
 
 pop:
   server:
-    url: http://1234:8081
+    url: ${server-host}
 
 front:
   server:
