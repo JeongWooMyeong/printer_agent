@@ -11,7 +11,7 @@ import javax.print.PrintService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/printers")
+@RequestMapping("/api/agent/printers")
 @RequiredArgsConstructor
 public class PrinterController {
 
