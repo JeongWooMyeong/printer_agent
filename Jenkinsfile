@@ -53,8 +53,8 @@ pipeline {
             steps {
                 withEnv(["KUBECONFIG=${env.KUBECONFIG}"]) {
                     bat """
-                        kubectl apply -f C:\\Project\\erp_server\\k8s\\printer-agent-deployment.yaml
-                        kubectl apply -f C:\\Project\\erp_server\\k8s\\printer-agent-service.yaml
+                        kubectl apply -f C:\\Project\\printer_agent\\k8s\\printer-agent-deployment.yaml
+                        kubectl apply -f C:\\Project\\printer_agent\\k8s\\printer-agent-service.yaml
 
                         kubectl set image deployment/printer-agent-server-deployment printer-agent-server=${DOCKER_IMAGE}:${DOCKER_TAG}
 
