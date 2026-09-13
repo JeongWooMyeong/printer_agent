@@ -23,6 +23,10 @@ spec:
           ports:
             - containerPort: 8088
 
+          env:
+            - name: POP_SERVER_URL
+              value: "http://myapp-service:8081"
+
           resources:
             requests:
               cpu: "250m"

@@ -9,7 +9,7 @@ server:
 
 pop:
   server:
-    url: ${server-host}
+    url: ${POP_SERVER_URL:http://localhost:8081}
 
 front:
   server:
