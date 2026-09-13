@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: printer-agent-server-service
+
+spec:
+  selector:
+    app: printer-agent-server
+
+  ports:
+    - protocol: TCP
+      port: 18080
+      targetPort: 18080
+  type: ClusterIP
